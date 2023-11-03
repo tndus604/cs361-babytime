@@ -1,0 +1,23 @@
+{
+  "name": "cs361-babytime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "cd activity-rest && npm install",
+    "start-server": "cd activity-rest && npm start",
+    "install-client": "cd activity-ui && npm install",
+    "build-client": "cd activity-ui && npm run build",
+    "start-client": "cd activity-ui && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tndus604/cs361-babytime.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tndus604/cs361-babytime/issues"
+  },
+  "homepage": "https://github.com/tndus604/cs361-babytime#readme"
+}

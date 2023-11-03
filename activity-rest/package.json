@@ -1,0 +1,23 @@
+{
+  "name": "activities_rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "activities_controller.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon activities_controller.mjs"
+  },
+  "engines": {
+    "node": ">=14.20.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "mongoose": "^7.4.4",
+    "nodemon": "^3.0.1"
+  }
+}
