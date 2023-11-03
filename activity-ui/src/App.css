@@ -5,8 +5,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #2a2a2e;
   color: white;
-  margin: 5%;
-  padding: 5%;
+  margin: 1%;
+  padding: 1%;
 }
 
 html {
@@ -24,14 +24,12 @@ html {
 }
 
 .App-nav a {
-  padding: 5px 20px 5px 20px;
-  background-color:rgb(114, 170, 180);
-  text-decoration: none;
+  padding: 5px;
+  background-color: skyblue;
+  /* background-color:rgb(114, 170, 180); */
+  /* text-decoration: none; */
   color: black;
   font-weight: bold;
-  border-radius: 2rem;
-  margin-left: 1%;
-  margin-right: 1%;
 }
 
 
@@ -176,4 +174,37 @@ a {
 .icon:hover {
   color: red;
   cursor: pointer;
+}
+
+/* ------------------------------------------------- */
+/* Baby Profile */
+/* ------------------------------------------------- */
+.avatar {
+  vertical-align: middle;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transform: translateY(45px);
+}
+
+.card-container {
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2%;
+}
+
+.top-card {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.bottom-card {
+  border: 2px solid white;
+  padding-top: 30px;
 }

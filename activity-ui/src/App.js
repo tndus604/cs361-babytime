@@ -13,7 +13,6 @@ function App() {
     <div className="App">
 
       <Router>
-        <Navigation /> 
  
           <Route path='/' exact>
             <HomePage setActivitiesToEdit={setActivitiesToEdit}/> 
@@ -26,6 +25,8 @@ function App() {
           <Route path='/edit'>
             <EditActivitiesPage activityToEdit={activityToEdit} />
           </Route>
+
+          <Navigation /> 
       </Router>
       <footer>
         <p>© Copyright 2023 Su Youn Jeon</p>

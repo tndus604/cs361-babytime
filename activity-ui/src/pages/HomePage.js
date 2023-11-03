@@ -2,6 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import ActivityTable from '../components/ActivityTable';
+import BabyProfile from '../components/BabyProfile';
+
 
 function HomePage({ setActivityToEdit }) {
   
@@ -44,12 +46,15 @@ function HomePage({ setActivityToEdit }) {
     }
   };
 
+  const [activityToEdit, setActivitiesToEdit] = useState();
+
   return (
     <>
      <header>
         <h1>Babytime Tracker</h1>
       </header>
-
+      <BabyProfile />
+    
       <ActivityTable activities={activities} onEdit={onEdit} onDelete={onDelete}/>
 
       <br/>
