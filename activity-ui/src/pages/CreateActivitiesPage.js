@@ -6,6 +6,7 @@ import { FaPersonBreastfeeding } from 'react-icons/fa6';
 import { GiBabyBottle } from 'react-icons/gi';
 import { MdBabyChangingStation } from 'react-icons/md';
 import { GiNightSleep } from 'react-icons/gi';
+import { IconContext } from "react-icons";
 
 
 function CreateActivityPage() {
@@ -59,23 +60,23 @@ function CreateActivityPage() {
         <fieldset>
 
           <button className="activity-button" onClick={() => handleActivityClick('Breastfeed')}>
-            <FaPersonBreastfeeding />
-            <p><small>Breastfeed</small></p>
+            <FaPersonBreastfeeding className="icon-breastfeed" size={(28)}/>
+            <p>Breastfeed</p>
           </button>
           <button className="activity-button" onClick={() => handleActivityClick('Formula')}>
-            <GiBabyBottle />
+            <GiBabyBottle size={(28)} />
             <p><small>Formula</small></p>
           </button>
           <button className="activity-button" onClick={() => handleActivityClick('Diaper')}>
-            <MdBabyChangingStation />
+            <MdBabyChangingStation size={(28)} />
             <p><small>Diaper</small></p>
           </button>
           <button className="activity-button" onClick={() => handleActivityClick('Sleep')}>
-            <GiNightSleep />
+            <GiNightSleep size={(28)}/>
             <p><small>Sleep</small></p>
           </button>
           <button className="activity-button" onClick={() => handleActivityClick('Medication')}>
-            <GiNightSleep />
+            <GiNightSleep size={(28)}/>
             <p><small>Medication</small></p>
           </button>
           <br/>

@@ -91,8 +91,8 @@ tr:hover {
 /* ------------------------------------------------- */
 
 fieldset, legend, label, input {
-  margin: 1em;
-  padding: 0.5em;
+  margin: 1rem;
+  padding: 1rem;
   color: white;
 }
 
@@ -107,7 +107,7 @@ label {
 fieldset {
   margin: auto;
   margin-top: 3em;
-  width: 50%;
+  width: 75%;
 }
 
 input, legend {
@@ -122,8 +122,33 @@ select {
 }
 
 .activity-button {
-  margin-right: 2%;
+  margin-right: 0.5rem;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
 }
+
+.activity-button:first-child {
+  background-color: INDIANRED;
+}
+
+.activity-button:nth-child(2) {
+  background-color: orange;
+}
+
+.activity-button:nth-child(3) {
+  background-color: gold;
+}
+.activity-button:nth-child(4) {
+  background-color: YELLOWGREEN;
+}
+
+.activity-button:nth-child(5) {
+  background-color: DARKTURQUOISE;
+}
+
+
+
 
 /* button {
   margin: 1em;
@@ -174,6 +199,10 @@ a {
 .icon:hover {
   color: red;
   cursor: pointer;
+}
+
+.icon-breastfeed {
+  
 }
 
 /* ------------------------------------------------- */

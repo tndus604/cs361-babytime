@@ -4,7 +4,6 @@ import { useHistory, Link } from 'react-router-dom';
 import ActivityTable from '../components/ActivityTable';
 import BabyProfile from '../components/BabyProfile';
 
-
 function HomePage({ setActivityToEdit }) {
   
   const history = useHistory();
@@ -46,7 +45,7 @@ function HomePage({ setActivityToEdit }) {
     }
   };
 
-  const [activityToEdit, setActivitiesToEdit] = useState();
+ 
 
   return (
     <>

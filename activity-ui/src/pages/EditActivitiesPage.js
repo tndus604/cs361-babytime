@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FaPersonBreastfeeding } from 'react-icons/fa6';
 import { GiBabyBottle } from 'react-icons/gi';
@@ -21,6 +21,24 @@ function EditActivityPage({ activityToEdit }) {
   const [amount, setAmount] = useState('');
   const [color, setColor] = useState('');
   const [memo, setMemo] = useState('');
+
+  useEffect(() => {
+    // Fetch data from the database based on the activityToEdit identifier
+    fetch(`/activities/${activityToEdit._id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        // Set the state variables with the retrieved data
+        setName(data.name || '');
+        setStart(data.start || '');
+        setEnd(data.end || '');
+        setAmount(data.amount || '');
+        setColor(data.color || '');
+        setMemo(data.memo || '');
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, [activityToEdit._id]);
 
   const editActivity = async () => {
     const updatedActivity = {name, start, end, amount, color, memo};
@@ -48,43 +66,39 @@ function EditActivityPage({ activityToEdit }) {
         <fieldset>
           <button className="activity-button" onClick={() => handleActivityClick('Breastfeed')}>
             <FaPersonBreastfeeding />
-            <p><small>Breastfeed</small></p>
+            <p>Breastfeed</p>
           </button>
           <button className="activity-button" onClick={() => handleActivityClick('Formula')}>
             <GiBabyBottle />
-            <p><small>Formula</small></p>
+            <p>Formula</p>
           </button>
           <button className="activity-button" onClick={() => handleActivityClick('Diaper')}>
             <MdBabyChangingStation />
-            <p><small>Diaper</small></p>
+            <p>Diaper</p>
           </button>
           <button className="activity-button" onClick={() => handleActivityClick('Sleep')}>
             <GiNightSleep />
-            <p><small>Sleep</small></p>
+            <p>Sleep</p>
           </button>
           <button className="activity-button" onClick={() => handleActivityClick('Medication')}>
             <GiNightSleep />
-            <p><small>Medication</small></p>
+            <p>Medication</p>
           </button> <br/>
 
-          <label for="start">Start Time: </label> 
+          <label for="start">Start time: </label> 
           <input id="start"
-            type="number"
-            min="0"
-            placeholder="10"
+            type="time"
             value={start}
             onChange={e => setStart(e.target.value)}
           /> <br/>
 
-          <label for="end">End Time: </label> 
+          <label for="end">End time: </label> 
           <input id="end"
-            type="number"
-            min="0"
-            placeholder="210"
+            type="time"
+            placeholder= {end}
             value={end}
             onChange={e => setEnd(e.target.value)}
-          /> 
-          <br/>
+          /> <br/>
 
           <label for="amount">Amount (ml): </label> 
           <input id="amount"

@@ -7,15 +7,16 @@ import Navigation from './components/Navigation';
 import { useState } from "react";
 
 function App() {
-  const [activityToEdit, setActivitiesToEdit] = useState();
+  const [activityToEdit, setActivityToEdit] = useState();
 
   return (
     <div className="App">
 
       <Router>
+        <Navigation /> 
  
           <Route path='/' exact>
-            <HomePage setActivitiesToEdit={setActivitiesToEdit}/> 
+            <HomePage setActivityToEdit={setActivityToEdit}/> 
           </Route>
 
           <Route path='/create'>
@@ -26,7 +27,7 @@ function App() {
             <EditActivitiesPage activityToEdit={activityToEdit} />
           </Route>
 
-          <Navigation /> 
+     
       </Router>
       <footer>
         <p>© Copyright 2023 Su Youn Jeon</p>
