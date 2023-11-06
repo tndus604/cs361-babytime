@@ -74,10 +74,10 @@ app.put('/activities/:_id', (req, res) => {
         return;
     }
 
-    if (!Number.isInteger(req.body.amount)) {
-        res.status(400).json({ Error: 'Invalid input for yhe amount property.' });
-        return;
-    }
+    // if (!Number.isInteger(req.body.amount)) {
+    //     res.status(400).json({ Error: 'Invalid input for the amount property.' });
+    //     return;
+    // }
 
     activities.replaceActivity(req.params._id, req.body.name, req.body.start, req.body.end, req.body.amount, req.body.color, req.body.memo)
         .then(numUpdated => {

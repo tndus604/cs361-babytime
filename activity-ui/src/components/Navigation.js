@@ -6,8 +6,8 @@ import { FcAddDatabase } from 'react-icons/fc';
 function Navigation() {
     return (
         <nav className="App-nav">
-            <Link to="/"><IoHome /></Link>
-            <Link to="/create"><FcAddDatabase /></Link>
+            <Link to="/">Home</Link>
+            <Link to="/create">Add</Link>
         </nav>
     );
   }

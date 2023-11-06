@@ -40,23 +40,49 @@ function EditActivityPage({ activityToEdit }) {
       });
   }, [activityToEdit._id]);
 
+  // const editActivity = async () => {
+  //   const updatedActivity = {name, start, end, amount, color, memo};
+
+  //   const response = await fetch(`/activities/${activityToEdit._id}`, {
+  //     method: 'PUT',
+  //     body: JSON.stringify(updatedActivity),
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   });
+
+  //   if (response.status === 200) {
+  //     alert("Successfully edited.");
+  //   } else {
+  //     alert(`Failed to edit activity, status code = ${response.status}`);
+  //   }
+  //   history.push('/');
+  // }
+
   const editActivity = async () => {
-    const updatedActivity = {name, start, end, amount, color, memo};
-
-    const response = await fetch(`/activities/${activityToEdit._id}`, {
-      method: 'PUT',
-      body: JSON.stringify(updatedActivity),
-      headers: {
-        'Content-Type': 'application/json'
+    const updatedActivity = { name, start, end, amount, color, memo };
+  
+    try {
+      const response = await fetch(`/activities/${activityToEdit._id}`, {
+        method: 'PUT',
+        body: JSON.stringify(updatedActivity),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+  
+      if (response.status === 200) {
+        alert("Successfully edited.");
+        history.push('/');
+      } else {
+        const responseData = await response.json(); // Parse the response data
+        console.error('Edit request failed:', responseData);
+        alert(`Failed to edit activity, status code = ${response.status}`);
       }
-    });
-
-    if (response.status === 200) {
-      alert("Successfully edited.");
-    } else {
-      alert(`Failed to edit activity, status code = ${response.status}`);
+    } catch (error) {
+      console.error('Error during edit request:', error);
+      alert('Failed to edit activity. Please check the server logs.');
     }
-    history.push('/');
   }
 
   return (

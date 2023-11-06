@@ -6,7 +6,6 @@ import { FaPersonBreastfeeding } from 'react-icons/fa6';
 import { GiBabyBottle } from 'react-icons/gi';
 import { MdBabyChangingStation } from 'react-icons/md';
 import { GiNightSleep } from 'react-icons/gi';
-import { IconContext } from "react-icons";
 
 
 function CreateActivityPage() {
@@ -128,7 +127,7 @@ function CreateActivityPage() {
 
         </fieldset>
         <br/>
-        <button onClick={addActivity}> Create </button>
+        <button className="create-button" onClick={addActivity}> Create </button>
 
     </div>
   )
