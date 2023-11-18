@@ -9,6 +9,21 @@ function HomePage({ setActivityToEdit }) {
   const history = useHistory();
 
   const [activities, setActivities] = useState([]);
+  const [profile, setProfile] = useState([]);
+
+  const loadProfile = async () => {
+    try {
+      const response = await fetch('/baby-profile');
+      const data = await response.json();
+      setProfile(data);
+    } catch (error) {
+      console.error("Error fetching profile:", error);
+    }
+  }
+
+  useEffect(() =>  loadProfile(), []);
+
+  
 
 
   const loadActivities = async () => {
@@ -52,7 +67,7 @@ function HomePage({ setActivityToEdit }) {
      <header>
         <h1>Babytime Tracker</h1>
       </header>
-      <BabyProfile />
+      <BabyProfile profile={profile} />
     
       <ActivityTable activities={activities} onEdit={onEdit} onDelete={onDelete}/>
 

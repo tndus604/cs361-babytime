@@ -1,7 +1,8 @@
 import './App.css';
-import HomePage from './pages/HomePage.js'
-import CreateActivitiesPage from './pages/CreateActivitiesPage.js'
-import EditActivitiesPage from './pages/EditActivitiesPage.js'
+import HomePage from './pages/HomePage.js';
+import CreateActivitiesPage from './pages/CreateActivitiesPage.js';
+import EditActivitiesPage from './pages/EditActivitiesPage.js';
+import CreateProfilePage from './pages/CreateProfilePage.js';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Navigation from './components/Navigation';
 import { useState } from "react";
@@ -27,6 +28,9 @@ function App() {
             <EditActivitiesPage activityToEdit={activityToEdit} />
           </Route>
 
+          <Route path='/create-profile'>
+            <CreateProfilePage />
+          </Route>
      
       </Router>
       <footer>

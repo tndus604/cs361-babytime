@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import * as activities from './activities_model.mjs';
+import * as profile from './profile_model.mjs';
 import express from 'express';
 import moment from 'moment';
 
@@ -9,6 +10,90 @@ const app = express();
 
 
 app.use(express.json());
+app.post('/baby-profile', (req, res) => {
+    const { name, birthday } = req.body;
+
+    // Check if all required fields are provided
+    if (!name || !birthday ) {
+        res.status(400).json({ Error: 'All fields are required' });
+        return;
+    }
+
+
+    // Create profile
+    profile.createProfile(name, birthday)
+        .then(profile => {
+            res.status(201).json(profile);
+        })
+        .catch(error => {
+            console.error(error);
+            res.status(400).json({ Error: 'An error occurred while creating the profile.' });
+        });
+});
+
+
+app.get('/baby-profile/:_id', (req, res) => {
+    const profileId = req.params._id;
+    profile.findProfileById(profileId)
+        .then(profile => { 
+            if (profile !== null) {
+                res.status(200).json(profile);
+            } else {
+                res.status(404).json({ Error: 'Resource not found' });
+            }         
+         })
+        .catch(error => {
+            res.status(400).json({ Error: 'Request failed' });
+        });
+
+});
+
+
+app.get('/baby-profile', (req, res) => {
+    let filter = {};
+    // Is there a query parameter named year? If so add a filter based on its value.
+    if(req.query.year !== undefined){
+        filter = { year: req.query.year };
+    }
+    
+    profile.findProfile(filter, '', 0)
+        .then(profile => {
+            res.status(200).send(profile);
+        })
+        .catch(error => {
+            console.error(error);
+            res.send({ Error: 'Request failed' });
+        });
+
+});
+
+
+app.put('/baby-profile/:_id', (req, res) => {
+    // Check if all required fields are provided
+    if (!req.body.name || !req.body.birthday ) {
+        res.status(400).json({ Error: 'All fields are required' });
+        return;
+    }
+
+    // if (!Number.isInteger(req.body.amount)) {
+    //     res.status(400).json({ Error: 'Invalid input for the amount property.' });
+    //     return;
+    // }
+
+    profile.replaceProfile(req.params._id, req.body.name, req.body.birthday)
+        .then(numUpdated => {
+            if (numUpdated === 1) {
+                res.status(200).json({ _id: req.params._id, name: req.body.name, birthday: req.body.birthday })
+            } else {
+                res.status(404).json({ Error: 'Resource not found' });
+            }
+        })
+        .catch(error => {
+            console.error(error);
+            res.status(400).json({ Error: 'Request failed' });
+        });
+});
+
 
 
 app.post('/activities', (req, res) => {
@@ -56,6 +141,7 @@ app.get('/activities', (req, res) => {
     if(req.query.year !== undefined){
         filter = { year: req.query.year };
     }
+
     activities.findActivities(filter, '', 0)
         .then(activities => {
             res.status(200).send(activities);

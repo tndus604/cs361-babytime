@@ -1,6 +1,17 @@
 import avatar from "../img/baby.png";
 
-export default function BabyProfile() {
+export default function BabyProfile( {profile} ) {
+  if (!profile || !profile.length) {
+    return <p>No profile data available</p>;
+  }
+
+  // Check if profile[0] is defined before accessing its properties
+  if (!profile[0]) {
+    return <p>Invalid profile data</p>;
+  }
+
+  const lastProfile = profile[profile.length - 1];
+
   return (
 
     <div class="card-container">
@@ -8,19 +19,9 @@ export default function BabyProfile() {
         <img className="avatar" src={avatar} alt="profile picture" />
       </div>
       <div class="bottom-card">
-        <h2 className="babyname">Baby Elijah</h2>
-        <h3 className="birthday">October 28, 2022</h3>
+        <h2 className="babyname">Name: {lastProfile.name}</h2>
+        <h3 className="birthday">Birthday: {lastProfile.birthday}</h3>
       </div>
     </div>
-
-    // <div className="baby-profile">
-    //   <img className="avatar" src={avatar} alt="profile picture" />
-    //   <div className="profileCard">
-    //       <h2 className="babyname">Baby Elijah</h2>
-    //       <h3 className="birthday">October 28, 2022</h3>
-    //       <p className="weight"></p>
-    //       <p className="weight"></p>
-    //   </div>
-    // </div>
   );
 }
