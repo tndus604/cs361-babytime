@@ -88,5 +88,7 @@ const activitySchema = mongoose.Schema({
     memo: { type: String, required: false }
 });
 ```
+## UML sequence diagram
+![UML diagram](./uml.png)
 
 
