@@ -11,6 +11,12 @@ Make sure you have the following installed:
 - Node.js
 - npm (Node Package Manager)
 
+### How to Start
+1. Clone the repository using Git.
+2. Navigate to the "activity-rest" folder, run npm install, and then execute npm start.
+3. Move to the "activity-ui" folder, run npm install, and then execute npm start.
+4. The application will be accessible at http://localhost:8000.
+
 ## Communication
 
 ### 1. Client-side (React):
@@ -88,7 +94,7 @@ const activitySchema = mongoose.Schema({
     memo: { type: String, required: false }
 });
 ```
-## UML sequence diagram
+## UML Sequence Diagram
 ![UML diagram](./uml.png)
 
 
