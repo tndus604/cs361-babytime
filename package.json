@@ -11,6 +11,9 @@
     "start-client": "cd activity-ui && npm start",
     "start": "concurrently \"npm run start-server\" \"npm run start-client\""
   },
+  "engines": {
+    "node": ">=14.20.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tndus604/cs361-babytime.git"
