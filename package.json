@@ -8,7 +8,8 @@
     "start-server": "cd activity-rest && npm start",
     "install-client": "cd activity-ui && npm install",
     "build-client": "cd activity-ui && npm run build",
-    "start-client": "cd activity-ui && npm start"
+    "start-client": "cd activity-ui && npm start",
+    "start": "concurrently \"npm run start-server\" \"npm run start-client\""
   },
   "repository": {
     "type": "git",
