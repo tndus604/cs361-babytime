@@ -21,7 +21,9 @@
     "url": "https://github.com/tndus604/cs361-babytime/issues"
   },
   "homepage": "https://github.com/tndus604/cs361-babytime#readme",
-  "dependencies": {
-    "concurrently": "^8.2.2"
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1",
+    "react-scripts": "^5.0.1"
   }
 }
