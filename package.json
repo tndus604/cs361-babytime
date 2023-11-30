@@ -9,7 +9,8 @@
     "install-client": "cd activity-ui && npm install",
     "build-client": "cd activity-ui && npm run build",
     "start-client": "cd activity-ui && npm start",
-    "start": "concurrently \"npm run start-server\" \"npm run start-client\""
+    "start": "concurrently \"npm run start-server\" \"npm run start-client\"",
+    "heroku-postbuild": "npm run build-client"
   },
   "engines": {
     "node": "14.17.0"
