@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FaPersonBreastfeeding } from 'react-icons/fa6';
 import { GiBabyBottle } from 'react-icons/gi';
 import { MdBabyChangingStation } from 'react-icons/md';
@@ -8,7 +8,7 @@ import { GiNightSleep } from 'react-icons/gi';
 
 function EditActivityPage({ activityToEdit }) {
 
-  const history = useHistory();
+  const history = useNavigate();
 
   const [name, setName] = useState('');
 

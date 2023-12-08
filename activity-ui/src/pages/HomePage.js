@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import ActivityTable from '../components/ActivityTable';
 import BabyProfile from '../components/BabyProfile';
 
 function HomePage({ setActivityToEdit }) {
   
-  const history = useHistory();
+  const history = useNavigate();
 
   const [activities, setActivities] = useState([]);
   const [profile, setProfile] = useState([]);

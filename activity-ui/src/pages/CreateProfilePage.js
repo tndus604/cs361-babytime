@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 function CreateProfilePage() {
 
-  const history = useHistory();
+  const history = useNavigate();
 
   const [name, setName] = useState('');
   const [birthday, setBirthday] = useState('');
