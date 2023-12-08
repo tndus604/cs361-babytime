@@ -6,7 +6,7 @@ import BabyProfile from '../components/BabyProfile';
 
 function HomePage({ setActivityToEdit }) {
   
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const [activities, setActivities] = useState([]);
   const [profile, setProfile] = useState([]);
@@ -21,8 +21,15 @@ function HomePage({ setActivityToEdit }) {
     }
   }
 
-  useEffect(() =>  loadProfile(), []);
-
+ 
+  useEffect(() => {
+    loadProfile();
+  }, []);
+  
+  useEffect(() => {
+    loadActivities();
+  }, []);
+  
   
 
 
@@ -35,11 +42,11 @@ function HomePage({ setActivityToEdit }) {
       console.error("Error fetching activities:", error);
     }
   }
-  useEffect(() =>  loadActivities(), []);
+ 
 
   const onEdit = activity => {
     setActivityToEdit(activity);
-    history.push('/edit');
+    navigate('/edit');
   };
 
 

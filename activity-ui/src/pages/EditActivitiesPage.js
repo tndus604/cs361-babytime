@@ -8,7 +8,7 @@ import { GiNightSleep } from 'react-icons/gi';
 
 function EditActivityPage({ activityToEdit }) {
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const [name, setName] = useState('');
 
@@ -56,7 +56,7 @@ function EditActivityPage({ activityToEdit }) {
   //   } else {
   //     alert(`Failed to edit activity, status code = ${response.status}`);
   //   }
-  //   history.push('/');
+  //   navigate('/');
   // }
 
   const editActivity = async () => {
@@ -73,7 +73,7 @@ function EditActivityPage({ activityToEdit }) {
   
       if (response.status === 200) {
         alert("Successfully edited.");
-        history.push('/');
+        navigate('/');
       } else {
         const responseData = await response.json(); // Parse the response data
         console.error('Edit request failed:', responseData);

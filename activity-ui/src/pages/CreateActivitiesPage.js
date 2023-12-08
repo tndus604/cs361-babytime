@@ -9,7 +9,7 @@ import { GiNightSleep } from 'react-icons/gi';
 
 function CreateActivityPage() {
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const [name, setName] = useState('');
 
@@ -45,7 +45,7 @@ function CreateActivityPage() {
       alert("An error occurred while making the request. Please type in valid input.");
     }
 
-    history.push('/');
+    navigate('/');
   }
 
 

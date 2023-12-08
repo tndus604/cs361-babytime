@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function CreateProfilePage() {
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const [name, setName] = useState('');
   const [birthday, setBirthday] = useState('');
@@ -33,7 +33,7 @@ function CreateProfilePage() {
       alert("An error occurred while making the request. Please type in valid input.");
     }
 
-    history.push('/');
+    navigate('/');
   }
 
 
