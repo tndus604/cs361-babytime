@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import moment from 'moment';
 
 
 function CreateProfilePage() {
@@ -37,7 +36,6 @@ function CreateProfilePage() {
     history.push('/');
   }
 
-  const formattedDate = moment().format('MM-DD-YY');
 
   return (
     <div>

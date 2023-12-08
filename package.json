@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/tndus604/cs361-babytime#readme",
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "@babel/plugin-proposal-private-property-in-object": "^1.0.0"
   }
 }

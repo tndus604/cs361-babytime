@@ -16,7 +16,7 @@ export default function BabyProfile( {profile} ) {
 
     <div class="card-container">
       <div class="top-card">
-        <img className="avatar" src={avatar} alt="profile picture" />
+        <img className="avatar" src={avatar} alt="profile" />
       </div>
       <div class="bottom-card">
         <h2 className="babyname">Name: {lastProfile.name}</h2>

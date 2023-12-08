@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import moment from 'moment';
 import { FaPersonBreastfeeding } from 'react-icons/fa6';
 import { GiBabyBottle } from 'react-icons/gi';
 import { MdBabyChangingStation } from 'react-icons/md';
@@ -49,7 +48,6 @@ function CreateActivityPage() {
     history.push('/');
   }
 
-  const formattedDate = moment().format('MM-DD-YY');
 
   return (
     <div>

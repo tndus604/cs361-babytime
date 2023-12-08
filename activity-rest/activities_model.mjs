@@ -24,7 +24,8 @@ const activitySchema = mongoose.Schema({
     end: { type: String, required: false },
     amount: { type: Number, required: false },
     color: { type: String, required: false },
-    memo: { type: String, required: false }
+    memo: { type: String, required: false },
+    date: { type: Date, required: true}
 });
 
 /**
@@ -34,9 +35,9 @@ const Activity = mongoose.model("Activity", activitySchema);
 
 
 
-const createActivity = async (name, start, end, amount, color, memo) => {
+const createActivity = async (name, start, end, amount, color, memo, date) => {
     // Call the constructor to create an instance of the model class User
-    const activity = new Activity({ name: name, start: start, end: end, amount: amount, color: color, memo: memo });
+    const activity = new Activity({ name: name, start: start, end: end, amount: amount, color: color, memo: memo, date: date });
     // Call save to persist this object as a document in MongoDB
 
     return activity.save();

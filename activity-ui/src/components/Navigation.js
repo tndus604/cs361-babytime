@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { IoHome } from 'react-icons/io5';
-import { FcAddDatabase } from 'react-icons/fc';
 
 function Navigation() {
     return (
